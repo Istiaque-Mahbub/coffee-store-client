@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2'
+import Header from './Header';
 
 const AddCoffee = () => {
     const handleAddCoffee = e =>{
@@ -46,7 +47,13 @@ const AddCoffee = () => {
        })
     }
     return (
-        <div className="bg-[#F3F4F0] p-24">
+        <div>
+          <header className="mb-10">
+      <Header>
+
+      </Header>
+    </header>
+            <div className="bg-[#F3F4F0] p-24">
            <h2 className="text-3xl font-extrabold">Add a Coffee</h2> 
            <form onSubmit={handleAddCoffee}>
             {/* form name and quantity row */}
@@ -135,6 +142,7 @@ const AddCoffee = () => {
            
             <input type="submit" value="Add Coffee" className="btn btn-block btn-primary"/>
            </form>
+        </div>
         </div>
     );
 };

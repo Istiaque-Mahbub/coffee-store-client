@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom"
 import CoffeeCard from "./component/CoffeeCard";
 import { useState } from "react";
+import Header from "./component/Header";
 
 
 function App() {
@@ -8,7 +9,13 @@ function App() {
   const loadedCoffees = useLoaderData();
    const [coffees,setCoffees] = useState(loadedCoffees)
   return (
-    <div className="m-20">
+   <div >
+    <header className="mb-10">
+      <Header>
+
+      </Header>
+    </header>
+     <div className="m-20">
       
       <h1 className="text-6xl text-center my-20 text-purple-600">Hot Cold Coffees {coffees.length}</h1>
      <div className="grid md:grid-cols-2 gap-6">
@@ -20,6 +27,7 @@ function App() {
      </div>
       
     </div>
+   </div>
   )
 }
 
