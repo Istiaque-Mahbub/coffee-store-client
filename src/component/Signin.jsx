@@ -10,10 +10,10 @@ const Signin = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email,password)
+        // console.log(email,password)
         signInUser(email,password)
         .then(result=>{
-            console.log(result.user)
+            // console.log(result.user)
 
             //update last login time
             const lastSignInTime = result?.user?.metadata?.lastSignInTime;
@@ -21,7 +21,7 @@ const Signin = () => {
               email,lastSignInTime
             }
 
-            fetch(`http://localhost:5000/users`,{
+            fetch(`https://coffee-store-server-silk-seven.vercel.app/users`,{
               method:'PATCH',
               headers:{
                 'content-type':'application/json'
@@ -32,7 +32,7 @@ const Signin = () => {
               return res.json()
             })
             .then(data=>{
-              console.log(data)
+              // console.log(data)
             })
         })
         .catch(error=>{

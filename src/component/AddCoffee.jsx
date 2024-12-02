@@ -13,11 +13,11 @@ const AddCoffee = () => {
         const details = form.details.value;
         const photo = form.photo.value;
         const newCoffee = {name,quantity,supplier,taste,category,details,photo}
-        console.log(newCoffee)
+        // console.log(newCoffee)
 
         //send data to the server
 
-       fetch('http://localhost:5000/coffee',
+       fetch('https://coffee-store-server-silk-seven.vercel.app/coffee',
         {
             method:'POST',
             headers:{

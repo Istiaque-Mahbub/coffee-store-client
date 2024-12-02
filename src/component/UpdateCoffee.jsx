@@ -16,11 +16,11 @@ const UpdateCoffee = () => {
         const details = form.details.value;
         const photo = form.photo.value;
         const updateCoffee = {name,quantity,supplier,taste,category,details,photo}
-        console.log(updateCoffee)
+        // console.log(updateCoffee)
 
         //send data to the server
 
-       fetch(`http://localhost:5000/coffee/${_id}`,
+       fetch(`https://coffee-store-server-silk-seven.vercel.app/coffee/${_id}`,
         {
             method:'PUT',
             headers:{

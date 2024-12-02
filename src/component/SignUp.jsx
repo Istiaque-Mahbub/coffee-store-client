@@ -9,10 +9,10 @@ const SignUp = () => {
     const email = e.target.email.value;
     const name = e.target.name.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    // console.log(email, password);
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         const createdAt = result?.user?.metadata?.creationTime;
 
         const newUser = {
@@ -21,7 +21,7 @@ const SignUp = () => {
           createdAt,
         };
         // save new user info to database
-        fetch("http://localhost:5000/users", {
+        fetch("https://coffee-store-server-silk-seven.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -38,7 +38,7 @@ const SignUp = () => {
           });
       })
       .catch((error) => {
-        console.log(error.message);
+        // console.log(error.message);
       });
   };
   return (
